@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="emoji" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 72 72" style="enable-background:new 0 0 72 72;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EA5A47;}
+	.st1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:2;}
+</style>
+<g id="color">
+	<polygon points="28,41 26,41 25,42 24,43 24,45 24,47 25,48 28,49 34,49 42,49 46,49 48,47 48,44 47,42 44,41 37,41 	"/>
+	<path class="st0" d="M41.7,40.8c0,6.1-2.5,11-5.7,11s-5.7-4.9-5.7-11"/>
+</g>
+<g id="line">
+	<g>
+		<path class="st1" d="M41.7,41.8c0,6.1-2.5,11-5.7,11s-5.7-4.9-5.7-11"/>
+		<g>
+			<path class="st2" d="M31.8,49h-4.3c-2.2,0-4-1.8-4-4l0,0c0-2.2,1.8-4,4-4h17c2.2,0,4,1.8,4,4l0,0c0,2.2-1.8,4-4,4h-2.1"/>
+			<path class="st2" d="M40.9,49h-0.5"/>
+			<path class="st2" d="M42.4,49h-1.5"/>
+		</g>
+	</g>
+</g>
+</svg>

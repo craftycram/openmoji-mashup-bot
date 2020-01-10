@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="emoji" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 72 72" style="enable-background:new 0 0 72 72;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_5_);}
+	.st1{clip-path:url(#SVGID_6_);fill:#FCEA2B;}
+	.st2{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g id="color">
+	<g>
+		<g>
+			<g>
+				<defs>
+					<polygon id="SVGID_1_" points="1,1 2,1 1,2 					"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+				</clipPath>
+			</g>
+			<g>
+				<defs>
+					<polygon id="SVGID_3_" points="1,1 2,1 1,2 					"/>
+				</defs>
+				<defs>
+					<polygon id="SVGID_4_" points="-1,-1 -2,-1 -1,-2 					"/>
+				</defs>
+				<clipPath id="SVGID_5_">
+					<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+				</clipPath>
+				<clipPath id="SVGID_6_" class="st0">
+					<use xlink:href="#SVGID_4_"  style="overflow:visible;"/>
+				</clipPath>
+				<rect x="6.6" y="8.1" class="st1" width="55.2" height="56"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="hair">
+</g>
+<g id="skin">
+</g>
+<g id="skin-shadow">
+</g>
+<g id="line">
+	<path class="st2" d="M16.9,30.5c0,0-1,8.6,6.9,7.9c2.6-0.2,7.8-0.7,7.9-8.3c0-0.7,0-1.6-0.8-2.6c-1.1-1.4-3.6-2-9.9-1.4
+		C20.9,26,17.4,25.9,16.9,30.5z"/>
+	<polyline class="st2" points="17,29.9 16.5,26.6 20.4,26 	"/>
+	<path class="st2" d="M50.7,30.5c0,0,1,8.6-6.9,7.9c-2.6-0.2-7.8-0.7-7.9-8.3c0-0.7,0-1.6,0.8-2.6c1.1-1.4,3.6-2,9.9-1.4
+		C46.8,26,50.2,25.9,50.7,30.5z"/>
+	<path class="st2" d="M29.5,26.4c0,0,4.1,2.5,8.7,0"/>
+	<path class="st2" d="M31.5,31.3c0,0,2.2-3.8,4.5,0"/>
+	<polyline class="st2" points="50.7,29.9 51.1,26.6 47.3,26 	"/>
+	<path class="st2" d="M32,30c0,0,1.8-3.8,3.7,0"/>
+	<circle cx="42.5" cy="32" r="2.6"/>
+	<circle cx="25.2" cy="32" r="2.6"/>
+</g>
+</svg>
