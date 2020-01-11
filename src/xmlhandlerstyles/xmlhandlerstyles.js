@@ -1,10 +1,10 @@
 const fs = require('fs');
 const xpath = require('xpath');
-const dom = require('xmldom').DOMParser;
+const Dom = require('xmldom').DOMParser;
 
 function xmlhandlerstyles(path) {
   /* read xml data */
-  const domobj = new dom().parseFromString(fs.readFileSync(path, 'utf-8'));
+  const domobj = new Dom().parseFromString(fs.readFileSync(path, 'utf-8'));
   const select = xpath.useNamespaces({
     svg: 'http://www.w3.org/2000/svg',
   });

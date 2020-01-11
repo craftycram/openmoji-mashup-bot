@@ -10,21 +10,25 @@ const emojiFolderEyes = `${emojiFolderMain}/eyes`;
 const emojiFolderObjects = `${emojiFolderMain}/objects`;
 const emojiFolderBackground = `${emojiFolderMain}/background`;
 
+
 /* file-arrays */
-let mouths = [];
-let eyes = [];
-let objects = [];
-let backgrounds = [];
+const mouths = [];
+const eyes = [];
+const objects = [];
+const backgrounds = [];
+
 
 /* randomly choosen files */
+/*
 let mouth;
 let eye;
 let object;
 let background;
+*/
 
 /* svg data */
-let data = [];
-let styles = [];
+const data = [];
+const styles = [];
 
 /* start reading folders */
 /* pushing into array */
@@ -48,10 +52,10 @@ fs.readdirSync(emojiFolderBackground).forEach((file) => {
 // console.log(mouths, eyes, objects, backgrounds);
 
 /* randomly choosing files */
-mouth = mouths[Math.floor(Math.random() * mouths.length)];
-eye = eyes[Math.floor(Math.random() * eyes.length)];
-object = objects[Math.floor(Math.random() * objects.length)];
-background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+const mouth = mouths[Math.floor(Math.random() * mouths.length)];
+const eye = eyes[Math.floor(Math.random() * eyes.length)];
+const object = objects[Math.floor(Math.random() * objects.length)];
+const background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 
 // console.log(mouth, eye, object, background);
 
@@ -76,9 +80,9 @@ const test = {
 fs.writeFileSync('log.txt', data);
 */
 
-console.log(data);
-console.log(styles);
-var output = Mustache.render(template, test);
-console.log(output);
+// console.log(data);
+// console.log(styles);
+const output = Mustache.render(template, test);
+// console.log(output);
 
 fs.writeFileSync('./res/test.svg', output);
