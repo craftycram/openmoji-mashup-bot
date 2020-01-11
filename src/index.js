@@ -59,15 +59,15 @@ const background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 
 // console.log(mouth, eye, object, background);
 
-data.push(xmlhandlerg(`${emojiFolderBackground}/${background}`));
-data.push(xmlhandlerg(`${emojiFolderMouth}/${mouth}`));
-data.push(xmlhandlerg(`${emojiFolderEyes}/${eye}`));
-data.push(xmlhandlerg(`${emojiFolderObjects}/${object}`));
+data.push(xmlhandlerg(`${emojiFolderBackground}/${background}`, 'bg'));
+data.push(xmlhandlerg(`${emojiFolderMouth}/${mouth}`, 'mouth'));
+data.push(xmlhandlerg(`${emojiFolderEyes}/${eye}`, 'eye'));
+data.push(xmlhandlerg(`${emojiFolderObjects}/${object}`, 'obj'));
 
-styles.push(xmlhandlerstyles(`${emojiFolderBackground}/${background}`));
-styles.push(xmlhandlerstyles(`${emojiFolderMouth}/${mouth}`));
-styles.push(xmlhandlerstyles(`${emojiFolderEyes}/${eye}`));
-styles.push(xmlhandlerstyles(`${emojiFolderObjects}/${object}`));
+styles.push(xmlhandlerstyles(`${emojiFolderBackground}/${background}`, 'bg'));
+styles.push(xmlhandlerstyles(`${emojiFolderMouth}/${mouth}`, 'mouth'));
+styles.push(xmlhandlerstyles(`${emojiFolderEyes}/${eye}`, 'eye'));
+styles.push(xmlhandlerstyles(`${emojiFolderObjects}/${object}`, 'obj'));
 
 // eslint-disable-next-line no-console
 const template = fs.readFileSync('./res/templates/main.svg').toString();
