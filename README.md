@@ -19,6 +19,17 @@ Bei manchen Emojis gab es noch Elemente die an den Mündern oder Augen angesetzt
 Zum Schluss haben wir alle Emojis gesammelt und in die Repo eingebunden.
 
 ### Software
+Zuerst haben wir ein neues Node.js Projekt erstellt um dort unser Script zu erstellen.  
+Dies liest mit dem npm-Modul [fs](https://www.npmjs.com/package/fs) die Ordner aus und speichert alle Dateien in einem Array.
+
+Aus diesem wird dann zufällig je Kategorie eine Datei ausgewählt und ebenfalls abgespeichert.  
+Um aus dem jeweiligen SVG die relevanten Daten zu extrahieren und verarbeiten verwenden wir das npm-Modul [xpath](https://www.npmjs.com/package/xpath),
+welches es uns erlaubt Dateien im XML-Format (d.h. auch SVGs) mit einer gewissen Terminologie zu durchsuchen (vgl. RegEx).
+Hierbei suchen wir alle Gruppen- und Style-Tags und speichern diese, nachdem die Namen der beiden Tags mit der Kategorie versehen wurden, in einem weiteren Array.  
+
+Nachdem alle Dateien durchsucht und extrahiert worden sind wird der Array mit dem npm-Modul [mustache](https://www.npmjs.com/package/mustache) in eine Template-Datei
+eines leeren SVGs eingefügt und diese abgespeichert.
+
 
 
 ### Emoji-Source
