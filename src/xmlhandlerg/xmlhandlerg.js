@@ -8,7 +8,7 @@ function xmlhandlerg(path, type) {
   const select = xpath.useNamespaces({
     svg: 'http://www.w3.org/2000/svg',
   });
-  let temp = select('//svg:g/child::*', domobj).toString();
+  let temp = select('//svg:g', domobj).toString();
   // const title = select("//svg:g[@id='line']", domobj).toString();
   temp = temp.replace('st', `st_${type}`);
   return temp;
