@@ -1,4 +1,7 @@
 const fs = require('fs');
+const {
+  exec
+} = require("child_process");
 const Mustache = require('mustache');
 const xmlhandlerg = require('./xmlhandlerg');
 const xmlhandlerstyles = require('./xmlhandlerstyles');
@@ -88,4 +91,16 @@ setInterval(() => {
 
   fs.unlinkSync('./res/test.svg');
   fs.writeFileSync('./res/test.svg', output);
+  exec('open ./res/test.svg', (error, stdout, stderr) => {
+    if (error) {
+      // eslint-disable-next-line no-console
+      return;
+    if (stderr) {
+      // eslint-disable-next-line no-console
+      console.log(`stderr: ${stderr}`);
+      return;
+    }
+    // eslint-disable-next-line no-console
+    console.log(`stdout: ${stdout}`);
+  });
 }, 1000);
