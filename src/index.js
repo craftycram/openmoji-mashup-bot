@@ -51,38 +51,41 @@ fs.readdirSync(emojiFolderBackground).forEach((file) => {
 
 // console.log(mouths, eyes, objects, backgrounds);
 
-/* randomly choosing files */
-const mouth = mouths[Math.floor(Math.random() * mouths.length)];
-const eye = eyes[Math.floor(Math.random() * eyes.length)];
-const object = objects[Math.floor(Math.random() * objects.length)];
-const background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+setInterval(() => {
+  /* randomly choosing files */
+  const mouth = mouths[Math.floor(Math.random() * mouths.length)];
+  const eye = eyes[Math.floor(Math.random() * eyes.length)];
+  const object = objects[Math.floor(Math.random() * objects.length)];
+  const background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 
-// console.log(mouth, eye, object, background);
+  // console.log(mouth, eye, object, background);
 
-data.push(xmlhandlerg(`${emojiFolderBackground}/${background}`, 'bg'));
-data.push(xmlhandlerg(`${emojiFolderMouth}/${mouth}`, 'mouth'));
-data.push(xmlhandlerg(`${emojiFolderEyes}/${eye}`, 'eye'));
-data.push(xmlhandlerg(`${emojiFolderObjects}/${object}`, 'obj'));
+  data.push(xmlhandlerg(`${emojiFolderBackground}/${background}`, 'bg'));
+  data.push(xmlhandlerg(`${emojiFolderMouth}/${mouth}`, 'mouth'));
+  data.push(xmlhandlerg(`${emojiFolderEyes}/${eye}`, 'eye'));
+  data.push(xmlhandlerg(`${emojiFolderObjects}/${object}`, 'obj'));
 
-styles.push(xmlhandlerstyles(`${emojiFolderBackground}/${background}`, 'bg'));
-styles.push(xmlhandlerstyles(`${emojiFolderMouth}/${mouth}`, 'mouth'));
-styles.push(xmlhandlerstyles(`${emojiFolderEyes}/${eye}`, 'eye'));
-styles.push(xmlhandlerstyles(`${emojiFolderObjects}/${object}`, 'obj'));
+  styles.push(xmlhandlerstyles(`${emojiFolderBackground}/${background}`, 'bg'));
+  styles.push(xmlhandlerstyles(`${emojiFolderMouth}/${mouth}`, 'mouth'));
+  styles.push(xmlhandlerstyles(`${emojiFolderEyes}/${eye}`, 'eye'));
+  styles.push(xmlhandlerstyles(`${emojiFolderObjects}/${object}`, 'obj'));
 
-// eslint-disable-next-line no-console
-const template = fs.readFileSync('./res/templates/main.svg').toString();
-const test = {
-  groups: data.toString(),
-  styles: styles.toString(),
-};
+  // eslint-disable-next-line no-console
+  const template = fs.readFileSync('./res/templates/main.svg').toString();
+  const test = {
+    groups: data.toString(),
+    styles: styles.toString(),
+  };
 
-/*
-fs.writeFileSync('log.txt', data);
-*/
+  /*
+  fs.writeFileSync('log.txt', data);
+  */
 
-// console.log(data);
-// console.log(styles);
-const output = Mustache.render(template, test);
-// console.log(output);
+  // console.log(data);
+  // console.log(styles);
+  const output = Mustache.render(template, test);
+  // console.log(output);
 
-fs.writeFileSync('./res/test.svg', output);
+  fs.unlinkSync('./res/test.svg');
+  fs.writeFileSync('./res/test.svg', output);
+}, 1000);
