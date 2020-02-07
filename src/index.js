@@ -27,9 +27,7 @@ let object;
 let background;
 */
 
-/* svg data */
-const data = [];
-const styles = [];
+
 
 /* start reading folders */
 /* pushing into array */
@@ -53,6 +51,12 @@ fs.readdirSync(emojiFolderBackground).forEach((file) => {
 // console.log(mouths, eyes, objects, backgrounds);
 
 setInterval(() => {
+  
+  /* svg data */
+const data = [];
+const styles = [];
+
+
   /* randomly choosing files */
   const mouth = mouths[Math.floor(Math.random() * mouths.length)];
   const eye = eyes[Math.floor(Math.random() * eyes.length)];
@@ -120,7 +124,7 @@ exec('killall gpicview');
     console.log(`stdout: ${stdout}`);
   });
   
-
+  
 
 /*
   exec('rm /home/pi/openmoji-mashup-bot/res/test.svg', (error, stdout, stderr) => {
@@ -150,4 +154,3 @@ exec('killall gpicview');
   }});
   * * */
 }, 5000);
-
