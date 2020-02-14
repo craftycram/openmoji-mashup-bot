@@ -16,6 +16,7 @@
     "eslint-plugin-import": "^2.19.1"
   },
   "dependencies": {
+    "diskusage": "^1.1.3",
     "fs": "0.0.1-security",
     "mustache": "^3.2.1",
     "xmldom": "^0.2.1",

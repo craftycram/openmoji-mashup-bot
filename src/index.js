@@ -78,6 +78,15 @@ setInterval(() => {
 
   const timeNow = Date.now();
 
+  const disk = require('diskusage');
+
+  let storageFree = '';
+  let storageTotal = '';
+  disk.check('/', (info) => {
+    storageFree = info.free;
+    storageTotal = info.total;
+  });
+
   const svgTemplate = fs.readFileSync('/home/pi/openmoji-mashup-bot/res/templates/main.svg').toString();
   const svgOutput = {
     groups: data.toString(),
@@ -87,6 +96,7 @@ setInterval(() => {
   const htmlTemplate = fs.readFileSync('/home/pi/openmoji-mashup-bot/res/templates/index.html').toString();
   const htmlOutput = {
     image: `output/emoji_${timeNow}.svg`,
+    storage: `${storageFree}/${storageTotal}`,
   };
 
   const outputSVG = Mustache.render(svgTemplate, svgOutput);
