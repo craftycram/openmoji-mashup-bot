@@ -82,7 +82,7 @@ setInterval(() => {
 
   let storageFree = '';
   let storageTotal = '';
-  disk.check('/', (info) => {
+  disk.check('/', (error, info) => {
     storageFree = info.free;
     storageTotal = info.total;
   });
