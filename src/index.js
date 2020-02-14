@@ -86,7 +86,7 @@ setInterval(() => {
 
   const htmlTemplate = fs.readFileSync('/home/pi/openmoji-mashup-bot/res/templates/index.html').toString();
   const htmlOutput = {
-    image: `emoji_${timeNow}.svg`
+    image: `output/emoji_${timeNow}.svg`,
   };
 
   const outputSVG = Mustache.render(svgTemplate, svgOutput);
