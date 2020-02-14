@@ -1,5 +1,7 @@
 const fs = require('fs');
-const { exec } = require("child_process");
+const {
+  exec
+} = require("child_process");
 const Mustache = require('mustache');
 const xmlhandlerg = require('./xmlhandlerg');
 const xmlhandlerstyles = require('./xmlhandlerstyles');
@@ -27,8 +29,6 @@ let object;
 let background;
 */
 
-
-
 /* start reading folders */
 /* pushing into array */
 fs.readdirSync(emojiFolderMouth).forEach((file) => {
@@ -51,10 +51,10 @@ fs.readdirSync(emojiFolderBackground).forEach((file) => {
 // console.log(mouths, eyes, objects, backgrounds);
 
 setInterval(() => {
-  
+
   /* svg data */
-const data = [];
-const styles = [];
+  const data = [];
+  const styles = [];
 
 
   /* randomly choosing files */
@@ -75,82 +75,23 @@ const styles = [];
   styles.push(xmlhandlerstyles(`${emojiFolderEyes}/${eye}`, 'eye'));
   styles.push(xmlhandlerstyles(`${emojiFolderObjects}/${object}`, 'obj'));
 
-  // eslint-disable-next-line no-console
-  const template = fs.readFileSync('/home/pi/openmoji-mashup-bot/res/templates/main.svg').toString();
-  const test = {
+
+  const timeNow = Date.now();
+
+  const svgTemplate = fs.readFileSync('/home/pi/openmoji-mashup-bot/res/templates/main.svg').toString();
+  const svgOutput = {
     groups: data.toString(),
     styles: styles.toString(),
   };
 
-  /*
-  fs.writeFileSync('log.txt', data);
-  */
+  const htmlTemplate = fs.readFileSync('/home/pi/openmoji-mashup-bot/res/templates/index.html').toString();
+  const htmlOutput = {
+    image: `emoji_${timeNow}.svg`
+  };
 
-  // console.log(data);
-  // console.log(styles);
-  const output = Mustache.render(template, test);
-  // console.log(output);
+  const outputSVG = Mustache.render(svgTemplate, svgOutput);
+  const outputHTML = Mustache.render(htmlTemplate, htmlOutput);
 
-exec('killall gpicview');
-  exec('rm /home/pi/openmoji-mashup-bot/res/test.svg', (error, stdout, stderr) => {
-    
-    if (error) {
-      // eslint-disable-next-line no-console
-      console.log(`err: ${error}`);
-    }
-    if (stderr) {
-      // eslint-disable-next-line no-console
-      console.log(`stderr: ${stderr}`);
-    }
-    
-    fs.writeFileSync('/home/pi/openmoji-mashup-bot/res/test.svg', output);
-  exec('xdg-open /home/pi/openmoji-mashup-bot/res/test.svg', (error, stdout, stderr) => {
-    if (error) {
-      // eslint-disable-next-line no-console
-      console.log(`err: ${error}`);
-      return;
-    }
-    if (stderr) {
-      // eslint-disable-next-line no-console
-      console.log(`stderr: ${stderr}`);
-      return;
-    }
-    // eslint-disable-next-line no-console
-    console.log(`stdout: ${stdout}`);
-  });
-    
-    
-    // eslint-disable-next-line no-console
-    console.log(`stdout: ${stdout}`);
-  });
-  
-  
-
-/*
-  exec('rm /home/pi/openmoji-mashup-bot/res/test.svg', (error, stdout, stderr) => {
-    if (error) {
-      // eslint-disable-next-line no-console
-      return;
-    if (stderr) {
-      // eslint-disable-next-line no-console
-      console.log(`stderr: ${stderr}`);
-      return;
-    }
-    // eslint-disable-next-line no-console
-    console.log(`stdout: ${stdout}`);
-  }});
-  fs.writeFileSync('/home/pi/openmoji-mashup-bot/res/test.svg', output);
-  exec('xdg-open /home/pi/openmoji-mashup-bot/res/test.svg', (error, stdout, stderr) => {
-    if (error) {
-      // eslint-disable-next-line no-console
-      return;
-    if (stderr) {
-      // eslint-disable-next-line no-console
-      console.log(`stderr: ${stderr}`);
-      return;
-    }
-    // eslint-disable-next-line no-console
-    console.log(`stdout: ${stdout}`);
-  }});
-  * * */
+  fs.writeFileSync(`/home/pi/openmoji-mashup-bot/res/output/emoji_${timeNow}.svg`, outputSVG);
+  fs.writeFileSync('/home/pi/openmoji-mashup-bot/res/index.html', outputHTML);
 }, 5000);
