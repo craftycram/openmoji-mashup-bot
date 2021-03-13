@@ -18,7 +18,7 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "mustache": "^3.2.1",
-    "xmldom": "^0.2.1",
+    "xmldom": "^0.5.0",
     "xpath": "0.0.27"
   }
 }
